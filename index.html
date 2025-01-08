@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P2-M24.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            document.querySelectorAll('.activity').forEach(activity => {
+                const time = activity.getAttribute('data-time');
+                activity.style.display = selectedTime < time ? 'none' : 'block';
+            });
+
+            if (selectedTime === '40') {
+                document.querySelectorAll('.step-4').forEach(step => {
+                    step.style.display = 'none';
+                });
+            }
+        }
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P2-M24.5</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time">Tiempo efectivo de clase: 50 minutos</h2>
+        <!-- Aquí se insertarán las actividades -->
+        
+        <div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('activity_0_content')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Verificar que los dispositivos y el espacio estén listos para trabajar.
+        </div>
+    </div>
+    <div id="activity_0_content" class="content">
+        <table>
+            <tr>
+                <th style="padding: 10px;">Acción</th>
+                <th style="padding: 10px;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">
+                    Verificar que todos los dispositivos (tabletas o computadoras) estén encendidos, conectados a internet, y que Scratch esté abierto en modo "Crear". Confirmar que las Magic Tablets estén disponibles y que el espacio esté organizado para trabajar cómodamente.
+                </td>
+                <td style="padding: 10px;">
+                    No se utiliza diálogo con los estudiantes en esta etapa.
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div id="activity-1" class="activity" data-time="2">
+    <div class="banner" onclick="toggleContent('activity_1_content')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Bienvenida y presentación de los objetivos del día.
+        </div>
+    </div>
+    <div id="activity_1_content" class="content">
+        <table>
+            <tr>
+                <th style="padding: 10px;">Acción</th>
+                <th style="padding: 10px;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">
+                    Proyectar (Diapositiva 1): "¡Bienvenidos, Genios de la Vida Cotidiana!" Saludar a los estudiantes con entusiasmo, mencionando el tema del día.
+                </td>
+                <td style="padding: 10px;">
+                    "¡Hola, Genios de la Vida Cotidiana! 🌟 ¡Qué emoción verlos de nuevo listos para una nueva aventura en el mundo de Scratch! Hoy vamos a practicar cómo simular situaciones de la vida cotidiana usando la lógica de la programación. ¡Prepárense para crear proyectos donde los personajes interactúen, tomen decisiones y hagan cosas que hacemos todos los días!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">
+                    Proyectar (Diapositiva 2): "¡Mi Estado Cotidiano!" Pedir a los estudiantes que indiquen su estado de ánimo usando poses temáticas relacionadas con la vida cotidiana.
+                </td>
+                <td style="padding: 10px;">
+                    "Antes de comenzar, ¡necesito saber cómo se sienten mis genios de la vida cotidiana! ☀️ Si están listos para programar situaciones de la vida real, ¡levanten los brazos como si estuvieran esperando el semáforo en verde! 🚦 Si necesitan un poquito más de energía, ¡crucen los brazos y hagan cara de estar eligiendo su juguete favorito en una tienda! 🧸 ¡A ver esas poses!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">
+                    Proyectar (Diapositiva 3): "¡Ritual de Gratitud Cotidiana!" Guiar a los estudiantes en el ritual.
+                </td>
+                <td style="padding: 10px;">
+                    "¡Excelente, Genios! Ahora, ¡es momento de nuestro ritual Gnius! Juntemos nuestras manos y digamos juntos: '¡Gracias por estar aquí, Genios! Hoy vamos a practicar cómo simular la vida cotidiana con lógica en Scratch. ¡A dar lo mejor de nosotros y a divertirnos programando!'"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">
+                    Proyectar (Diapositiva 4): "¡Objetivos Cotidianos de Hoy!" Explicar los objetivos de la misión de manera clara y sencilla.
+                </td>
+                <td style="padding: 10px;">
+                    "¡Y ahora, los <span style='color: red; font-weight: bold;'>objetivos</span> de nuestra misión de hoy! 1. Vamos a practicar cómo crear proyectos que simulen situaciones de la vida cotidiana usando condicionales y bucles en Scratch. 2. ¡Vamos a hacer que nuestros personajes interactúen, tomen decisiones y hagan cosas que hacemos todos los días de forma lógica y divertida! ¿Listos para este reto cotidiano?"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div id="activity-2" class="activity" data-time="3">
+    <div class="banner" onclick="toggleContent('activity_2_content')">
+        <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 3 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Activar la lógica simulando situaciones cotidianas.
+        </div>
+    </div>
+    <div id="activity_2_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (1 minuto):</strong> Proyectar (Diapositiva 5): "¡Activando Nuestra Lógica Cotidiana!" Explicar que combinarán movimiento y representaciones de situaciones cotidianas para activar el cerebro.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios de la Vida Cotidiana! 🚀 Vamos a activar nuestros cerebros para simular situaciones de la vida real con lógica. Hoy combinaremos movimiento y representaciones de situaciones cotidianas para preparar nuestras mentes para practicar la creación de proyectos con lógica. ¿Listos para simular la vida cotidiana con su cuerpo?"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (1.5 minutos):</strong> Proyectar (Diapositiva 6): "¡Mi Secuencia Cotidiana con Lógica!" Dar las <span style="color: red; font-weight: bold;">instrucciones</span> para la creación de la secuencia con movimientos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Ahora vamos a crear nuestra propia secuencia de movimientos que representen situaciones de la vida cotidiana! Piensen en una acción que hagan todos los días. Por ejemplo, pueden: simular cómo cruzan una calle, cómo compran algo en una tienda, o cómo saludan a un amigo. Piensen en al menos tres movimientos que representen la acción y las decisiones lógicas que toman, luego muéstrenmelos. ¡A crear con la lógica y la vida cotidiana!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (1.5 minutos):</strong> Proyectar (Diapositiva 7): "¡La Vida Cotidiana en Acción!" Pedir a los estudiantes que realicen su secuencia de movimientos y describan la situación cotidiana y las decisiones lógicas que están representando.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Impresionante, Genios! Ahora, uno por uno, muéstrenme su secuencia de movimientos mientras describen brevemente la situación cotidiana y las decisiones lógicas que representa. ¡Compartan sus simulaciones de la vida real y prepárense para practicar sus proyectos con lógica en Scratch!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div id="activity-3" class="activity" data-time="28">
+    <div class="banner" onclick="toggleContent('activity_3_content')">
+        <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 28 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Simular situaciones de la vida real usando lógica de programación.
+        </div>
+    </div>
+    <div id="activity_3_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> Proyectar (Diapositiva 8): "¡El Gran Desafío Cotidiano!" y presentar el desafío con la temática unificada, los nombres de los retos y los tres niveles (Rookie, Master, Hacker).
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios de la vida cotidiana, ha llegado el momento de simular situaciones de la vida real en Scratch! 🚀 Hoy usaremos la lógica para que nuestros personajes actúen como lo hacemos en el día a día. Tenemos tres desafíos emocionantes: '¡Si el Semáforo está en Verde, Cruzo!' (Rookie), '¡Si Tengo Dinero, Compro!' (Master) y '¡Si Te Conozco, Te Saludo!' (Hacker). ¡A elegir su reto cotidiano y a programar!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2:</strong> Proyectar (Diapositiva 9): "¡Detalles de los Retos Cotidianos!" Describir los pasos y metas específicas de cada nivel, utilizando el texto original y resaltando en negrita las partes clave: <span style="color: red; font-weight: bold;">Objetivo</span>, <span style="color: red; font-weight: bold;">Instrucciones</span>, <span style="color: red; font-weight: bold;">Condiciones</span>, y <span style="color: red; font-weight: bold;">Consejo</span>.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Aquí están los detalles de cada desafío para que elijan su camino!<br>
+        <strong>Nivel Rookie (Básico):</strong> 'El Cruce de la Calle' <br>
+        <strong>Nombre del Reto:</strong> '¡Si el Semáforo está en Verde, Cruzo!'<br>
+        <span style="color: red; font-weight: bold;">Objetivo:</span> Programar un personaje para que cruce la calle solo si el semáforo está en verde, y espere si está en rojo, simulando una situación cotidiana. <br>
+        <span style="color: red; font-weight: bold;">Instrucciones:</span> Abre un nuevo proyecto en Scratch. Crea un fondo con una calle y un semáforo. Crea dos disfraces para el semáforo (verde y rojo). Elige un personaje (sprite) que será un peatón. Programa el semáforo para que cambie de rojo a verde y viceversa usando un bucle "por siempre" y el bloque "siguiente disfraz". Programa al peatón para que: Utilice un bloque condicional "si <condición> entonces" donde la condición sea que el semáforo tenga el disfraz de color verde. Si la condición se cumple (el semáforo está en verde) el peatón debe cruzar la calle. Utilice el bloque de "esperar" para que el peatón espere si el semáforo no está en verde. <br>
+        <span style="color: red; font-weight: bold;">Condiciones:</span> La animación debe utilizar un bloque condicional "si, entonces". El peatón debe cruzar la calle solo si el semáforo está en verde. El peatón debe esperar si el semáforo está en rojo. <br>
+        <span style="color: red; font-weight: bold;">Consejo:</span> Utiliza el bloque "esperar" para simular el tiempo de espera en el semáforo. <br><br>
+        <strong>Nivel Master (Intermedio):</strong> 'La Interacción en la Tienda' <br>
+        <strong>Nombre del Reto:</strong> '¡Si Tengo Dinero, Compro!' <br>
+        <span style="color: red; font-weight: bold;">Objetivo:</span> Programar un escenario de una tienda donde un personaje puede comprar un objeto si tiene suficiente dinero (representado por una variable), mostrando interacciones de la vida cotidiana. <br>
+        <span style="color: red; font-weight: bold;">Instrucciones:</span> Abre un nuevo proyecto en Scratch. Crea un fondo con una tienda y un objeto a la venta (ej: un juguete). Elige dos personajes: un cliente y un vendedor. Crea una variable llamada "Dinero" e inicialízala con un valor (ej: 5). Programa al cliente para que, si su "Dinero" es igual o mayor que el precio del objeto (ej: 3), lo compre (es decir, la variable disminuya el valor del precio del objeto) y diga "¡Lo compré!". Si el cliente no tiene suficiente dinero, el cliente debe decir "No me alcanza". Programa al vendedor para que diga un precio del objeto. <br>
+        <span style="color: red; font-weight: bold;">Condiciones:</span> La animación debe utilizar bloques condicionales "si, entonces". El cliente debe comprar el objeto solo si tiene suficiente dinero. El cliente debe decir si pudo comprar o no. <br>
+        <span style="color: red; font-weight: bold;">Consejo:</span> Utiliza una variable para representar el dinero y usa un condicional para determinar si se realiza la compra. <br><br>
+        <strong>Nivel Hacker (Avanzado):</strong> 'El Saludo y la Conversación' <br>
+        <strong>Nombre del Reto:</strong> '¡Si Te Conozco, Te Saludo!' <br>
+        <span style="color: red; font-weight: bold;">Objetivo:</span> Programar una situación social donde dos personajes interactúan: si se conocen, se saludan; si no, uno pregunta el nombre, y si se lo dicen, se saludan en el segundo encuentro. <br>
+        <span style="color: red; font-weight: bold;">Instrucciones:</span> Abre un nuevo proyecto en Scratch. Elige dos personajes (sprites). Crea una variable llamada "Conocido" e inicialízala en 0. Programa a ambos personajes para que se muevan por la pantalla y que cuando se toquen hagan lo siguiente: Si "Conocido" es igual a 1 (los personajes ya se conocieron), se saluden. Si "Conocido" es igual a 0 (los personajes no se conocieron antes), uno debe preguntar el nombre del otro. Cuando se le diga el nombre debe cambiar la variable de "Conocido" a 1. En un segundo encuentro, los personajes deben saludarse. <br>
+        <span style="color: red; font-weight: bold;">Condiciones:</span> La animación debe utilizar bloques condicionales "si, entonces". Los personajes deben saludarse si se conocen. Si no se conocen, deben presentarse antes de saludarse en un segundo encuentro. <br>
+        <span style="color: red; font-weight: bold;">Consejo:</span> Utiliza variables y bloques de texto para la interacción.
+    </td>
+    <tr>
+    <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+        <strong>Paso 3:</strong> Proyectar (Diapositiva 10): "¡A Programar la Vida Cotidiana, Genios!" Temporizador de 20 minutos con recordatorio de los niveles y la temática.
+    </td>
+    <td style="padding: 10px; vertical-align: top;">
+        "¡Es su turno, genios de la vida cotidiana! 🚀 Tienen 20 minutos para practicar cómo simular situaciones de la vida real con la lógica de la programación en Scratch. Recuerden los nombres de sus retos y dejen que su creatividad guíe sus proyectos. ¡La magia de la vida cotidiana está en sus manos!"
+    </td>
+</tr>
+<tr>
+    <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+        <strong>Paso 4:</strong> Proyectar (Diapositiva 11): "¡Ajustes Cotidianos Finales!" Temporizador de 5 minutos para ajustes finales, con recordatorio visual de los detalles a revisar según el nivel.
+    </td>
+    <td style="padding: 10px; vertical-align: top;">
+        "¡Grandes programadores, es momento de pulir sus proyectos! ⏱️ Tienen 5 minutos para probar y ajustar sus simulaciones. Asegúrense de que las interacciones de sus personajes sean lógicas y de que todo funcione como en la vida real. ¡A perfeccionar sus mundos cotidianos!"
+    </td>
+</tr>
+<tr>
+    <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+        <strong>Paso 5:</strong> Proyectar (Diapositiva 12): "¡Reflexiones Cotidianas!" Reflexionar sobre los aprendizajes y retos enfrentados durante el desafío, enfocándose en la práctica de la creación de proyectos y su conexión con la vida cotidiana.
+    </td>
+    <td style="padding: 10px; vertical-align: top;">
+        "¡Impresionante trabajo, genios de la vida cotidiana! 🌟 Reflexionemos juntos: ¿Qué aprendieron al practicar la simulación de situaciones cotidianas con lógica? ¿Qué fue lo más desafiante y cómo lo superaron? ¿Qué consejo le darían a otros programadores de la vida real? ¡Compartan sus reflexiones y celebremos sus logros!"
+    </td>
+</tr>
+<tr>
+    <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+        <strong>Paso 6:</strong> Proyectar (Diapositiva 13): "¡Misión Cotidiana Cumplida, Genios!" Revisar los objetivos específicos del desafío con los estudiantes, según cada nivel y reto.
+    </td>
+    <td style="padding: 10px; vertical-align: top;">
+        "Hagamos un último chequeo: ¿Lograron que sus personajes interactúen de forma lógica en situaciones cotidianas usando condicionales y bucles? ¿Hicieron que sus animaciones representaran situaciones de la vida real de manera fluida y coherente? ¡Estoy seguro de que superaron todas las expectativas! ¡Felicidades, genios de la vida cotidiana!”
+    </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity" data-time="10">
+    <div class="banner" onclick="toggleContent('activity_4_content')">
+        <div class="title">🎉 Actividad 4: Team Gnius ⏰ Tiempo: 10 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Dinámica de colaboración y retroalimentación.
+        </div>
+    </div>
+    <div id="activity_4_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> Proyectar (Diapositiva 14): "¡Uniendo Mentes de la Vida Cotidiana!" Mostrar instrucciones para formar equipos pequeños y explicar que se compartirán los proyectos y se darán ideas para mejorarlos, enfocándose en la coherencia y fluidez de las simulaciones y la lógica de las interacciones.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios de la vida cotidiana, es hora de unir nuestras mentes brillantes! 🌟 Formen equipos de dos o tres programadores para compartir sus proyectos y darnos ideas geniales sobre cómo mejorar la simulación de la vida real y las interacciones lógicas. Juntos podemos hacer que cada proyecto sea aún más increíble."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2:</strong> Proyectar (Diapositiva 15): "¡Equipos de la Vida Cotidiana en 30 Segundos!" Temporizador de 30 segundos para formar los equipos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 30 segundos para unirse a sus compañeros de simulación de la vida cotidiana! ⏱️ Busquen sus equipos rápidamente y prepárense para una lluvia de ideas creativas. ¡Equipos listos, proyectos listos!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3:</strong> Proyectar (Diapositiva 16): "¡Magic Tablets de Ideas Cotidianas!" Explicar la importancia de usar las Magic Tablets para registrar ideas clave y preparar las mejoras de los proyectos, desde un punto de vista de la coherencia con la vida cotidiana y la lógica de las interacciones.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Programadores de la vida cotidiana, saquen sus Magic Tablets! 📝 Anoten todas las ideas geniales que les inspiren de los proyectos de sus compañeros. Recuerden que cada detalle cuenta para hacer que la simulación sea más lógica y coherente con la vida real. ¡Sus notas serán la clave para mejorar!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4:</strong> Proyectar (Diapositiva 17): "¡Listos para Simular la Vida Real!" Temporizador de 30 segundos para recoger las Magic Tablets.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 30 segundos para tomar sus Magic Tablets y prepararse para inspirar y ser inspirados con simulaciones de la vida cotidiana! ¡Manos a la obra, genios de la programación!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5:</strong> Proyectar (Diapositiva 18): "¡Think-Pair-Share: La Vida Cotidiana en Equipo!" Explicar el método Think-Pair-Share y guiar a los equipos para reflexionar y colaborar para mejorar la lógica y fluidez de las interacciones y la coherencia de la simulación con la vida cotidiana en sus proyectos y los de sus compañeros.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Vamos a usar el poder del Think-Pair-Share para mejorar nuestros proyectos! Primero, piensen individualmente en cómo mejorarían la lógica y la fluidez de las interacciones en el proyecto de su compañero, así como su similitud con la vida cotidiana. Luego, compartan esas ideas y elijan las mejores. ¡Finalmente, trabajen juntos para implementar esos cambios y hacer que sus proyectos sean aún más increíbles!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 6:</strong> Proyectar (Diapositiva 19): "¡Optimizando las Simulaciones de la Vida Cotidiana!" Instrucciones para la colaboración activa con un temporizador de 3 minutos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Manos a la obra, programadores de la vida cotidiana! ⏱️ Tienen 3 minutos para aplicar las mejoras que discutieron. Recuerden que cada detalle cuenta para que las interacciones en su proyecto sean aún más lógicas y para que la simulación sea coherente con la vida real. ¡A trabajar en equipo con toda su creatividad!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 7:</strong> Proyectar (Diapositiva 20): "¡Reflexiones de Equipo de la Vida Cotidiana!" Preguntas para reflexionar sobre la colaboración y los resultados.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Reflexionemos sobre esta aventura de programación de la vida cotidiana! ¿Qué aprendieron trabajando juntos? ¿Cómo hicieron que sus proyectos simularan situaciones de la vida real de manera más lógica y fluida? ¿Cuál fue la mejor idea que surgió de esta colaboración? ¡Compartan su sabiduría y celebremos el poder de la simulación de la vida cotidiana colectiva!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity" data-time="8.5">
+    <div class="banner" onclick="toggleContent('activity_5_content')">
+        <div class="title">🎉 Actividad 5: Honor the Lab ⏰ Tiempo: 8.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Reflexión y cierre del taller.
+        </div>
+    </div>
+    <div id="activity_5_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> Proyectar (Diapositiva 21): "¡Misión Cotidiana Cumplida, Programadores!" Mostrar los objetivos iniciales y discutir con los estudiantes si se cumplieron, enfocándose en la práctica de la creación de proyectos que simulan situaciones de la vida cotidiana con interacciones lógicas.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Genios de la vida cotidiana, llegó el momento de celebrar nuestros increíbles proyectos! 🌟 Revisemos juntos nuestros objetivos: ¿Practicamos cómo crear proyectos que simulen situaciones de la vida cotidiana usando condicionales y bucles en Scratch? ¿Creamos animaciones donde los personajes interactúan, toman decisiones y hacen cosas que hacemos todos los días de forma lógica y divertida? ¡Estoy seguro de que cada uno hizo un trabajo brillante! ¿Cómo se sienten al respecto?"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2:</strong> Proyectar (Diapositiva 22): Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos, reforzando el trabajo en equipo y la creatividad en la simulación de la vida cotidiana.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy, todos fueron increíbles programadores de la vida cotidiana. Dieron vida a situaciones de la vida real con lógica, exploraron el poder de los condicionales y los bucles y trabajaron en equipo como verdaderos genios. ¡Estoy muy orgulloso de todos los programadores de la vida cotidiana que hay aquí! ¡Un aplauso para su creatividad, lógica, dedicación y representación de la vida cotidiana!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3:</strong> Proyectar (Diapositiva 23): "¡Honremos Nuestro Espacio Cotidiano!" Dar instrucciones para recoger los materiales utilizados y organizar el espacio de trabajo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Ahora, como verdaderos programadores de la vida cotidiana, debemos honrar nuestro espacio de trabajo. Recojan sus Magic Tablets y todos los materiales que usamos, y dejen el aula lista para nuevas aventuras de programación. ¡Recuerden que cuidar nuestro espacio es parte de la magia de la programación!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+    </div>
+</body>
+</html>
